@@ -1,0 +1,19 @@
+{
+  "name": "polling-system",
+  "version": "1.0.0",
+  "description": "This project is a part of CSL2060 Course ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajapati-sumit/polling-system.git"
+  },
+  "author": "Sumit Prajapati & Tanmay Kulkarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prajapati-sumit/polling-system/issues"
+  },
+  "homepage": "https://github.com/prajapati-sumit/polling-system#readme"
+}
