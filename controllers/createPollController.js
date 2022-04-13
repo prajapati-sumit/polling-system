@@ -1,4 +1,4 @@
-const Note = require('../models/Poll')
+const Poll = require('../models/Poll')
 
 
 
@@ -30,25 +30,25 @@ const handleErrors = (err) => {
 
 
 // show all polls
-module.exports.getpolls = async (req, res) => {
+module.exports.getPolls = async (req, res) => {
     const user_id = res.locals.user._id;
-    const notes = await Note.getpolls(user_id);
-    res.locals.notes = notes;
-    res.render('polls/contents');
+    const polls = await Poll.getpolls(user_id);
+    res.locals.polls = polls;
+    res.render('createpolls/contents');
 }
 //request for creating a poll
-module.exports.addpolls_get = (req, res) => {
-    res.render('polls/create');
+module.exports.addPollPost = (req, res) => {
+    res.render('createpolls/create');
 
 }
 // create poll
-module.exports.addpolls_post = async (req, res) => {
+module.exports.addPollGet = async (req, res) => {
 
     //get poll information
     const { user_id,text} = req.body;
 
     try {
-        const note = await Note.create({user_id,text});
+        const poll = await Poll.create({user_id,text});
         res.status(201).json({ user: user_id });
     }
     catch (err) {
@@ -60,10 +60,9 @@ module.exports.addpolls_post = async (req, res) => {
 }
 
 // show single poll
-module.exports.poll_get = async (req,res) =>{
-    // console.log('this note:',req.params.id);
-    const note_id = req.params.id;
+module.exports.getPoll = async (req,res) =>{
+    const pollId = req.params.id;
 
-    const note = await Note.getNote(note_id);
-    res.render('notes/note',{note});
+    const poll = await Poll.getPoll(pollId);
+    res.render('createpolls/poll',{poll});
 }

@@ -1,8 +1,11 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
+
 const authRoutes = require('./routes/authRoutes');
-const noteRoutes = require('./routes/pollRoutes');
+const createPollRoutes = require('./routes/createPollRoutes');
+const castVoteRoutes = require('./routes/castVoteRoutes');
+
 const cookieParser = require('cookie-parser');
 const {requireAuth, checkUser} = require('./middleware/authMiddleware');
 
@@ -34,4 +37,5 @@ app.get('/', (req, res) => res.render('home'));
 // app.use();
 
 app.use(authRoutes);
-app.use('/polls',requireAuth,noteRoutes);
+app.use('/createpolls',checkUser,requireAuth,createPollRoutes);
+app.use('/castvote',checkUser,requireAuth,castVoteRoutes);
