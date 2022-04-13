@@ -1,14 +1,16 @@
 <%- include('../partials/header'); -%>
 
     <form>
-        <h2>Cast Vote</h2>
-        <label for="text">Question Goes here</label>
+        <h2>Create Poll</h2>
+        <label for="text">Enter Question</label>
         <input type="text" name="text" required />
         <br></br>
-        <label for="text">Options/Candidates</label>
-        <input type = "radio" name = "radiooptn" class="optn">
-        <div class="optn"></div>
-        Option 1 goes here
+        <label for="text">Enter Options</label>
+        <input type="text" name="text" class = "options" placeholder="Option 1" />
+        <input type="text" name="text" class = "options" placeholder="Option 1" />
+        <input type="text" name="text" class = "options" placeholder="Option 1" />
+        <input type="text" name="text" class = "options" placeholder="Option 1" />
+        
         <button>Create</button>
     </form>
 
