@@ -2,52 +2,54 @@ const mongoose = require('mongoose');
 const { ObjectId } = require('mongoose')
 
 
-const noteSchema = new mongoose.Schema({
+const pollSchema = new mongoose.Schema({
     user_id: {
         type: String,
         required: [true, 'User not mentioned'],
     },
-    text: {
+    question: {
         type: String,
-        required: [true, 'The note cannot be empty']
+        required: [true, 'The question cannot be empty']
     },
+    option0:{
+        type: String,
+    },
+    option1:{
+        type: String,
+    },
+    option2:{
+        type: String,
+    },
+    option3:{
+        type: String,
+    }
 });
 
 
 // fire a function after a doc saved to db
-noteSchema.post('save', function (doc, next) {
-    console.log('note was created & saved', doc);
+pollSchema.post('save', function (doc, next) {
+    console.log('poll was created & saved', doc);
     next();
 
 });
 
 
-noteSchema.statics.getNotes = async function (user_id) {
-    const notes = await this.find({ user_id: user_id });
-    return notes;
+pollSchema.statics.getPolls = async function (user_id) {
+    const polls = await this.find({ user_id: user_id });
+    return polls;
 }
-noteSchema.statics.getNote = async function (note_id) {
+pollSchema.statics.getPoll = async function (poll_id) {
     try {
 
-        const note = await this.findOne({ _id: note_id });
-        return note;
+        const poll = await this.findOne({ _id: poll_id });
+        return poll;
     }
     catch (err) {
         console.log(err);
     }
 }
-noteSchema.statics.deleteNote = async function (note_id) {
-    try {
-        await this.deleteOne({ _id: note_id }); 
-        return true;
-    }
-    catch (err) {
-        console.log(err);
-    }
-
-}
 
 
-const Note = mongoose.model('note', noteSchema);
+const Poll = mongoose.model('poll', pollSchema);
 
-module.exports = Note;
+module.exports = Poll;
