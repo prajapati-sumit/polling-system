@@ -1,0 +1,80 @@
+body{
+    background-color: #262626;
+}
+#mainheading{
+    color: aliceblue;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #404247;
+   
+}
+
+.navbar a{
+    color: white;
+    
+}
+
+
+
+.nav-link:hover {
+    color: gray !important;
+}
+
+/* .col-sm-6{
+    align-content: center;
+    text-align: center;
+    font-size: xx-large;
+    vertical-align:middle;
+    
+} */
+
+.card{
+    height: 100vh;
+    vertical-align: middle;
+    text-align: center;
+    font-size: xx-large;
+    /* background-color: yellow; */
+    background-color: #404247;
+    color: aliceblue;
+    /* padding-top: 10vh;  */
+    /* position: relative; */
+    /* top: 50%;  */
+}
+.card-body{
+    position: relative;
+    top: 30%;
+}
+
+.homeforms{
+    width: auto;
+    margin: 0 auto;
+    padding: none;
+    box-shadow: none;
+    border-radius: none;
+    background: none;
+}
+
+.pollid{
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    width: 80%;
+    height: 8%;
+}
+/* #castvote button{
+    width: 10px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: red;
+} */
+#casvote input{
+    width: 50px;
+    height: 20px;
+}
