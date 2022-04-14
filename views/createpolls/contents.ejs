@@ -2,11 +2,11 @@
 
 <ul class="recipes">
 
-  <% for(var i=0; i < notes.length; i++) { %>
-    <a href='notes/<%=notes[i]._id%>'>
-      <li class="recipe">
-        <h4>Sticky Note</h4>
-        <p><%= notes[i].text %></p>
+  <% for(var i=0; i < polls.length; i++) { %>
+    <a href='createpolls/<%=polls[i]._id%>'>
+      <li class="poll">
+        <h4>POLL HERE</h4>
+        <p><%= polls[i].question %></p>
       </li>
     </a>
  <% } %>
