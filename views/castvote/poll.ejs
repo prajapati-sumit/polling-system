@@ -2,31 +2,32 @@
 
     <div class="single">
 
-        <form action="/castvote/<%= poll.Id %>" method="POST" id = "poll">
+        <form action="/castvote/<%= poll._id %>" method="POST" id = "poll">
             <h2>
-                Voting a Poll
+                Cast Your Vote
             </h2>
-            <h3>Question goes here</h3>
+            <input class="hidden_box" name = "pollId" value="<%= poll._id %>" />
+            <h3><%= poll.question %></h3>
             <!-- <br></br> -->
             <label for="option" class = "radio">
-                <input type="radio" class = "radio_option" name="optn" id = "option" >
+                <input type="radio" class = "radio_option" name="option" id = "option" value=1>
                 <!-- <div class="radio_option"></div> -->
-                Option 1 goes here
+                <%= poll.option1.name %>
             </label>
             <label for="option" class = "radio">
-                <input type="radio" class = "radio_option" name="optn" id = "option" >
+                <input type="radio" class = "radio_option" name="option" id = "option" value=2>
                 <!-- <div class="radio_option"></div> -->
-                Option 2 goes here
+                <%= poll.option2.name %>
             </label>
             <label for="option" class = "radio">
-                <input type="radio" class = "radio_option" name="optn" id = "option" >
+                <input type="radio" class = "radio_option" name="option" id = "option" value=3>
                 <!-- <div class="radio_option"></div> -->
-                Option 3 goes here
+                <%= poll.option3.name %>
             </label>
             <label for="option" class = "radio">
-                <input type="radio" class = "radio_option" name="optn" id = "option" >
+                <input type="radio" class = "radio_option" name="option" id = "option" value=4>
                 <!-- <div class="radio_option"></div> -->
-                Option 4 goes here
+                <%= poll.option4.name %>
             </label>
             <button class="btn" type="submit">Cast Vote</button>
         </form>

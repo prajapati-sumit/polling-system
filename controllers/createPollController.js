@@ -21,8 +21,7 @@ module.exports.addPollGet = (req, res) => {
 }
 // create poll
 module.exports.addPollPost = async (req, res) => {
-res.render('createpolls/success');
-return;
+
     //get poll information
     const pollInfo = req.body;
     // console.log(pollInfo);

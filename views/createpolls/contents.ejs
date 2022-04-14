@@ -1,14 +1,20 @@
 <%- include('../partials/header'); -%>
-
+  
   <ul class="recipes">
-
+    <% if(polls.length==0){ %>
+      <h2>No Polls Found</h2>
+    <%}else {%>
     <% for(var i=0; i < polls.length; i++) { %>
       <a href='createpolls/<%=polls[i]._id%>'>
         <li class="poll">
 
+          <h5>
+            Unique Id: <%= polls[i]._id %>
+          </h5>
           <h4>
             <%= polls[i].question %>
           </h4>
+          
           <p>
             <%= polls[i].option1.name %>
               <%=(polls[i].option1.count)%>
@@ -31,5 +37,6 @@
       <% } %>
 
   </ul>
+  <%} %>
 
   <%- include('../partials/footer'); -%>

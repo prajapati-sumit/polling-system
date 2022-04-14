@@ -2,7 +2,7 @@
     <form action="/createpolls" method="POST">
         <h2>Create Poll</h2>
         <label for="text">Enter Question</label>
-        <input id="user_id_box" name = "user_id" value="<%= user._id %>" />
+        <input class="hidden_box" name = "user_id" value="<%= user._id %>" />
         <input type="text" name="question" required />
         <label for="text">Enter Options</label>
         <input type="text" name="option1" class = "options" placeholder="Option 1" />
