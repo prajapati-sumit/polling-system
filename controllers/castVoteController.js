@@ -29,12 +29,13 @@ const handleErrors = (err) => {
 
 
 // find Poll
-module.exports.findPoll = async(req, res) => {
-    // update in the database
-    // show single poll
-    const pollId = req.params.id;
+module.exports.getPoll = async(req, res) => {
 
-    const poll = await Poll.getPoll(pollId);
+    const pollId = req.body.pollId;
+    // const poll = await Poll.getPoll(pollId);
+    const poll = {
+        Id:pollId
+    };
     if(true || poll)
         res.render('castvote/poll',{poll});
     else
@@ -50,10 +51,4 @@ module.exports.castVote = (req, res) => {
     res.render('castvote/success');
 }
 
-// show single poll
-module.exports.getPoll = async (req,res) =>{
-    const pollId = req.body.pollId;
-    console.log(req.body);
-    const poll = await Poll.getPoll(pollId);
-    res.render('castvote/poll',{poll});
-}
+

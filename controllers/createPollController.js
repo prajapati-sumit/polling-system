@@ -45,11 +45,11 @@ module.exports.addPollPost = (req, res) => {
 module.exports.addPollGet = async (req, res) => {
 
     //get poll information
-    const { user_id,text} = req.body;
-
+    const pollInfo = req.body;
+    console.log(pollInfo);
     try {
-        const poll = await Poll.create({user_id,text});
-        res.status(201).json({ user: user_id });
+        const poll = await Poll.create(pollInfo);
+        res.status(201).json({ user: pollInfo.user_id });
     }
     catch (err) {
         // const errors = handleErrors(err);

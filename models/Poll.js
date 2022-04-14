@@ -12,16 +12,16 @@ const pollSchema = new mongoose.Schema({
         required: [true, 'The question cannot be empty']
     },
     option0:{
-        type: String,
+        type: {name:String,count:int}
     },
     option1:{
-        type: String,
+        type: {name:String,count:int}
     },
     option2:{
-        type: String,
+        type: {name:String,count:int}
     },
     option3:{
-        type: String,
+        type: {name:String,count:int}
     }
 });
 
@@ -35,8 +35,14 @@ pollSchema.post('save', function (doc, next) {
 
 
 pollSchema.statics.getPolls = async function (user_id) {
-    const polls = await this.find({ user_id: user_id });
-    return polls;
+    try{
+        const polls = await this.find({ user_id: user_id });
+        return polls;
+    }
+    catch(err){
+        console.log(err);
+        return false;
+    }
 }
 pollSchema.statics.getPoll = async function (poll_id) {
     try {
@@ -46,6 +52,7 @@ pollSchema.statics.getPoll = async function (poll_id) {
     }
     catch (err) {
         console.log(err);
+        return false;
     }
 }
 
