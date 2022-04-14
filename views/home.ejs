@@ -7,7 +7,7 @@
       <div class="card-body " >
         <p class="card-text">Create your own poll</p>
         <form action="/createpolls/create" method="GET" class="homeforms">
-          <button class="btn">Create</button>
+          <button class="btn" id="create">Create</button>
         </form>
       </div>
     </div>
@@ -18,7 +18,7 @@
         <p class="card-text">Cast Your Vote</p>
         <form action="/castvote" method="POST" class="homeforms">
           <input type="text" name="pollId" required class="pollid" />
-          <button class="btn">Go to poll</button>
+          <button class="btn" id="gotopoll">Go to poll</button>
         </form>
       </div>
     </div>

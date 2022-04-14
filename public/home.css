@@ -54,6 +54,7 @@ body{
     box-shadow: none;
     border-radius: none;
     background: none;
+    align-items: center;
 }
 
 .pollid{
@@ -78,3 +79,15 @@ body{
     width: 50px;
     height: 20px;
 }
+
+#create{
+    width: 50%;
+}
+#gotopoll{
+    width: 50%;
+}
+
+
+/* .btn{
+    width: 50%;
+} */
