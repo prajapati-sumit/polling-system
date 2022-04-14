@@ -1,8 +1,8 @@
 <%- include('../partials/header'); -%>
-
     <form action="/createpolls" method="POST">
         <h2>Create Poll</h2>
         <label for="text">Enter Question</label>
+        <input id="user_id_box" name = "user_id" value="<%= user._id %>" />
         <input type="text" name="question" required />
         <label for="text">Enter Options</label>
         <input type="text" name="option1" class = "options" placeholder="Option 1" />
@@ -13,30 +13,5 @@
         <button>Create</button>
     </form>
 
-    <!-- <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            //get the values
-            console.log('create button clicked');
-            const user_id = '<%- user._id %>' ;
-            const text = form.text.value;
-            try {
-                const res = await fetch('/notes', {
-                    method: 'POST',
-                    body: JSON.stringify({ user_id,text }),
-                    headers: { 'Content-Type': 'application/json' }
-                });
-                const data = await res.json();
-                if (data.user) {
-                    location.assign('/notes');
-                }
-
-            }
-            catch (err) {
-                console.log(err);
-            }
-        });
-    </script> -->
 
 <%- include('../partials/footer'); -%>

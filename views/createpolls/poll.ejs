@@ -1,14 +1,28 @@
 <%- include('../partials/header'); -%>
 
-    <div class="single">
+    <div>
+        
+            <h3>
+                <%- poll.question %>
+            </h3>
 
-        <form action="/createpolls" method="POST">
-            <h2>
-                Showing of Created Poll
-            </h2>
-            
-           
-        </form>
+        <h4>
+                <%= poll.option1.name %>
+                    (<%=poll.option1.count%>)
+            </h4>
+            <h4>
+                <%= poll.option2.name %>
+                    (<%=poll.option2.count%>)
+            </h4>
+            <h4>
+                <%= poll.option3.name %>
+                    (<%=poll.option3.count%>)
+            </h4>
+            <h4>
+                <%= poll.option4.name %>
+                    (<%=poll.option4.count%>)
+            </h4>
+
 
     </div>
 
