@@ -1,16 +1,35 @@
 <%- include('../partials/header'); -%>
 
-<ul class="recipes">
+  <ul class="recipes">
 
-  <% for(var i=0; i < polls.length; i++) { %>
-    <a href='createpolls/<%=polls[i]._id%>'>
-      <li class="poll">
-        <h4>POLL HERE</h4>
-        <p><%= polls[i].question %></p>
-      </li>
-    </a>
- <% } %>
+    <% for(var i=0; i < polls.length; i++) { %>
+      <a href='createpolls/<%=polls[i]._id%>'>
+        <li class="poll">
 
-</ul>
+          <h4>
+            <%= polls[i].question %>
+          </h4>
+          <p>
+            <%= polls[i].option1.name %>
+              <%=(polls[i].option1.count)%>
+          </p>
+          <p>
+            <%= polls[i].option2.name %>
+              <%=(polls[i].option2.count)%>
+          </p>
+          <p >
+            <%= polls[i].option3.name %>
+              <%=(polls[i].option3.count)%>
+          </p>
+          <p >
+            <%= polls[i].option4.name %>
+              <%=(polls[i].option4.count)%>
+          </p>
+ 
+        </li>
+      </a>
+      <% } %>
 
-<%- include('../partials/footer'); -%>
+  </ul>
+
+  <%- include('../partials/footer'); -%>

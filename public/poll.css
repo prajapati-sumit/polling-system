@@ -29,6 +29,9 @@ input{
     align-items: center;
     margin-right: 10px ;
 }
+#user_id_box{
+    display: none;
+}
 /* .btn{
     width: 70%;
     align-items: center;
@@ -37,4 +40,7 @@ input{
 .radio_option{
     height: 1.10em;
     width: 1.10em;
+}
+.polls{
+    border: 2px;
 }

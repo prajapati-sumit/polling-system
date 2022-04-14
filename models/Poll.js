@@ -29,7 +29,7 @@ const pollSchema = new mongoose.Schema({
 
 // fire a function after a doc saved to db
 pollSchema.post('save', function (doc, next) {
-    console.log('poll was created & saved', doc);
+    console.log('poll was created & saved');
     next();
 
 });
