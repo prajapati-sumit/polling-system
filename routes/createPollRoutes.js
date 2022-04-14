@@ -1,17 +1,17 @@
 const { Router } = require('express');
-const noteController = require('../controllers/createPollController')
+const pollController = require('../controllers/createPollController')
 
 const router = Router();
 
 //show all polls
-router.get('/',noteController.getPolls);
+router.get('/',pollController.getPolls);
 
 // create a poll
-router.post('/',noteController.addPollPost);
+router.post('/',pollController.addPollPost);
 
 // create poll request 
-router.get('/create',noteController.addPollGet);
+router.get('/create',pollController.addPollGet);
 
 // show a single poll
-router.get('/:id',noteController.getPoll)
+router.get('/:id',pollController.getPoll)
 module.exports = router;

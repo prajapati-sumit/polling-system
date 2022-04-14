@@ -37,16 +37,17 @@ module.exports.getPolls = async (req, res) => {
     res.render('createpolls/contents');
 }
 //request for creating a poll
-module.exports.addPollPost = (req, res) => {
+module.exports.addPollGet = (req, res) => {
     res.render('createpolls/create');
 
 }
 // create poll
-module.exports.addPollGet = async (req, res) => {
+module.exports.addPollPost = async (req, res) => {
 
     //get poll information
     const pollInfo = req.body;
     console.log(pollInfo);
+    
     try {
         const poll = await Poll.create(pollInfo);
         res.status(201).json({ user: pollInfo.user_id });

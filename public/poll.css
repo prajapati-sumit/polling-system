@@ -29,11 +29,11 @@ input{
     align-items: center;
     margin-right: 10px ;
 }
-.btn{
+/* .btn{
     width: 70%;
     align-items: center;
     align-self: center;
-}
+} */
 .radio_option{
     height: 1.10em;
     width: 1.10em;

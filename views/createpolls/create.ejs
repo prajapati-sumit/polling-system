@@ -1,20 +1,19 @@
 <%- include('../partials/header'); -%>
 
-    <form>
+    <form action="/createpolls" method="POST">
         <h2>Create Poll</h2>
         <label for="text">Enter Question</label>
-        <input type="text" name="text" required />
-        <br></br>
+        <input type="text" name="question" required />
         <label for="text">Enter Options</label>
-        <input type="text" name="text" class = "options" placeholder="Option 1" />
-        <input type="text" name="text" class = "options" placeholder="Option 1" />
-        <input type="text" name="text" class = "options" placeholder="Option 1" />
-        <input type="text" name="text" class = "options" placeholder="Option 1" />
+        <input type="text" name="option1" class = "options" placeholder="Option 1" />
+        <input type="text" name="option2" class = "options" placeholder="Option 2" />
+        <input type="text" name="option3" class = "options" placeholder="Option 3" />
+        <input type="text" name="option4" class = "options" placeholder="Option 4" />
         
         <button>Create</button>
     </form>
 
-    <script>
+    <!-- <script>
         const form = document.querySelector('form');
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -38,6 +37,6 @@
                 console.log(err);
             }
         });
-    </script>
+    </script> -->
 
 <%- include('../partials/footer'); -%>

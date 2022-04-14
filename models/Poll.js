@@ -11,18 +11,19 @@ const pollSchema = new mongoose.Schema({
         type: String,
         required: [true, 'The question cannot be empty']
     },
-    option0:{
-        type: {name:String,count:int}
-    },
     option1:{
-        type: {name:String,count:int}
+        type: {name:String,count:Number}
     },
     option2:{
-        type: {name:String,count:int}
+        type: {name:String,count:Number}
     },
     option3:{
-        type: {name:String,count:int}
-    }
+        type: {name:String,count:Number}
+    },
+    option4:{
+        type: {name:String,count:Number}
+    },
+
 });
 
 
