@@ -20,10 +20,7 @@ module.exports.getPoll = async (req, res) => {
 
 // cast vote
 module.exports.castVote = async (req, res) => {
-    // update in the database
-    // const chosenOption = `option${req.body.option}.count`;
-    // console.log(typeof("option3.count"),typeof(chosenOption));
-    // console.log(chosenOption);
+
     const option = req.body.option;
     if(option=="1"){
         Poll.findByIdAndUpdate({ _id: req.body.pollId }, { $inc: { "option1.count": 1 } }, { new: true }, (err, updatedRecord) => {
