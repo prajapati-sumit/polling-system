@@ -3,7 +3,7 @@
 
 
 1. **HTML/CSS with Bootstrap** for Frontend.
-2. **Express** as Middleware.
+2. **Express** as Web Application Framework.
 3. **Node JS** for Backend. 
 4. **MongoDB (Mongoose)** for Database.
 5. **Git/Github** for version control.
