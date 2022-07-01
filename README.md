@@ -11,7 +11,7 @@
 
 
 # Introduction
-This is a Polling System where an user can
+This is a Polling System where a user can
 - Create a poll
 - Cast a vote using unique poll id. 
 
